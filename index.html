@@ -1,0 +1,76 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Web socket serial test</h1>
+        <input type="button" onclick="connectToWS('1341')" value="connect to WebSocket endpoint" /><br><br>
+        <!-- <input type="text" id="port" name="myMessage" value="1340"><br><br> -->
+        <!-- <form>
+            message: <input type="text" id="myMessage" name="myMessage" value="hi there!"><br>
+        </form> -->
+
+        <br><br>
+
+        <p>Bill Accepter</p>
+
+        <input type="button" onclick="sendData('02')" value="Initial" />
+
+        <input type="button" onclick="sendData('02')" value="Request to accept" />
+
+        <input type="button" onclick="sendData('0F')" value="Request to reject" />
+
+        <input type="button" onclick="sendData('18')" value="Escrow" />
+
+        <input type="button" onclick="sendData('0c')" value="Check Status" />
+
+        <input type="button" onclick="sendData('5E')" value="Disable" />
+
+        <input type="button" onclick="sendData('3E')" value="Enable" />
+
+        <input type="button" onclick="sendData('30')" value="Reset" />
+
+        <br>
+        <br>
+
+
+        <p>Hopper</p>
+
+        <input type="button" onclick="sendData('02')" value="Initial" />
+
+        <input type="button" onclick="sendData('80')" value="Bill escrow" />
+
+        <input type="button" onclick="sendData('40')" value="Request to dispense" />
+
+        <input type="button" onclick="sendData('10')" value="Dispense" />
+
+        <br>
+        <br>
+
+        <p>Bill dispenser</p>
+
+        <input type="button" onclick="sendData('02')" value="Initial" />
+
+        <input type="button" onclick="sendData('1')" value="Dispense 1" />
+
+        <input type="button" onclick="sendData('2')" value="Dispense 2" />
+
+        <input type="button" onclick="sendData('3')" value="Dispense 3" />
+
+        <input type="button" onclick="sendData('4')" value="Dispense 4" />
+        <input type="button" onclick="sendData('5')" value="Dispense 5" />
+        <input type="button" onclick="sendData('10')" value="Dispense 10" />
+
+        <br>
+        <br>
+
+        <p>Receipt Printer</p>
+
+        <input type="button" onclick="sendDataToPrinter(1)" value="Test Print" />
+
+        
+        <br>
+        <br>
+    
+        <input type="button" onclick="closeConn()" value="Close connection" />
+    </body>
+    <script src="./js/main.js?v=0.0.13"></script>
+</html>
