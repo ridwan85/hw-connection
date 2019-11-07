@@ -1,0 +1,1 @@
+CreateObject("Wscript.Shell").Run "node ws-test.js", 0

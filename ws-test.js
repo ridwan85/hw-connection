@@ -289,37 +289,6 @@ ${values.total}
 
       </tr>
 </table>
-<!-- <div style="display:flex; flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column; font-weight: bold; flex-basis: 50%;">${tickectdetails.body.DEPART_TIME}</div>
-<div style="flex-direction: column;">: ${values.departTime} </div>
-</div>
-<div style="display:flex; flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.SOLD_BY}</div>
-<div style="flex-direction: column;">: ${values.soldBy} </div>
-</div>
-<div style="display: flex; flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.Ticket_No}</div>
-<div style="flex-direction: column;">: ${values.TicketNo}
-</div>
-</div>
-<div style="display: flex; flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.Name}</div>
-<div style="flex-direction: column;">: ${values.name}
-</div>
-</div>
-<div style="display: flex;flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.Phone_No}</div>
- <div style="flex-direction: column;">: ${values.PhoneNo} </div>
-</div>
-<div style="display: flex; flex-direction:row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.IC_Passport_No}</div>
-<div style="flex-direction: column;">: ${values.passportNumber}
-</div>
-</div>
-
-<div style="display: flex;flex-direction: row;width: 100%; margin-top: 5px;">
-<div style="flex-direction: column;font-weight: bold; flex-basis: 50%;">${tickectdetails.body.price}</div>
-<div style="flex-direction: column;">: ${values.total}</div> -->
 </div>
 
 
