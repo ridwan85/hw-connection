@@ -48,9 +48,10 @@ function onSending(msg) {
   for (let i = 0; i < clients.length; i++) clients[i].sendUTF(msg);
 }
 
-function createPdf(x) {
-  // values = JSON.parse(values);
-  // console.log("valuess----->", values);
+function createPdf(values) {
+  console.log("valuess----->", values);
+  values = JSON.parse(values);
+ 
   let print_option = 2;
   let execFile = require("child_process").exec;
 
@@ -101,52 +102,52 @@ function createPdf(x) {
     }
   };
 
-  var values = {
-    departDate: "2019-11-05",
-    departTime: "22:00:00",
-    soldBy: "KTB",
-    seatNo: 123,
-    passportNumber :"AXALASKL",
-    phoneNo:"1123566989",
-    pnrNo: 345,
-    TicketNo: "12345",
-    name: "tester",
-    source: {
-      id: 35,
-      name: "KLANG",
-      code: "KLG",
-      stateName: "Selangor",
-      regionName: "Northern"
-    },
-    destination: {
-      id: 32,
-      name: "BUTTERWORTH",
-      code: "BTW",
-      stateName: null,
-      regionName: "Central"
-    },
-    operator: {
-      id: 11,
-      integrationId: 6,
-      name: "KTB TEST",
-      company: "KTB TEST",
-      code: "KTBTEST"
-    },
-    pax: 1,
-    catGroups: {
-      count: {
-        adult: 1
-      },
-      sum: {
-        adult: 36.7
-      }
-    },
-    total: 36.7,
-    insurance: {
-      count: 1,
-      amount: 0.5
-    }
-  };
+  // var values = {
+  //   departDate: "2019-11-05",
+  //   departTime: "22:00:00",
+  //   soldBy: "KTB",
+  //   seatNo: 123,
+  //   passportNumber :"AXALASKL",
+  //   phoneNo:"1123566989",
+  //   pnrNo: 345,
+  //   TicketNo: "12345",
+  //   name: "tester",
+  //   source: {
+  //     id: 35,
+  //     name: "KLANG",
+  //     code: "KLG",
+  //     stateName: "Selangor",
+  //     regionName: "Northern"
+  //   },
+  //   destination: {
+  //     id: 32,
+  //     name: "BUTTERWORTH",
+  //     code: "BTW",
+  //     stateName: null,
+  //     regionName: "Central"
+  //   },
+  //   operator: {
+  //     id: 11,
+  //     integrationId: 6,
+  //     name: "KTB TEST",
+  //     company: "KTB TEST",
+  //     code: "KTBTEST"
+  //   },
+  //   pax: 1,
+  //   catGroups: {
+  //     count: {
+  //       adult: 1
+  //     },
+  //     sum: {
+  //       adult: 36.7
+  //     }
+  //   },
+  //   total: 36.7,
+  //   insurance: {
+  //     count: 1,
+  //     amount: 0.5
+  //   }
+  // };
   let styles = `<head>
   <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1, user-scalable=no">
   <meta charset="utf-8">
@@ -175,7 +176,7 @@ function createPdf(x) {
   <div style="/* display: flex; */">
  
   <div style="text-align:center">
-  <img style="text-align:center" alt="Kisok klangsentral" src="http://klangsentral.com/img/klangsentral-logo.png" height="90px" width="auto">
+  <img style="text-align:center" alt="Kisok klangsentral" src="http://kiosk.klangsentral.com/statics/klangblack.png" height="90px" width="auto">
   </div>
   
   <div style="text-align: center;flex->direction: column;font-weight: bold;align-self:center;">BUS TICKET<br></div>
