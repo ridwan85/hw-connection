@@ -44,7 +44,7 @@ function sendDataToPrinter(count){
         "section" : "P2",
         "concession_price" : 5,
         "tel_no" : "01920100123",
-        "qr_code" : "JKJAMMX1231",
+        "qr_code" : "JKJAMMXJJKW"
         "company_name" : "CATCH THAT BUS",
         "order_id": "MQRT190201",
         "time" : "12:00PM",
