@@ -266,7 +266,7 @@ function createPdf(data_dummy) {
 
     onSending("printing");
 
-    execFile('PDFtoPrinter.exe receipt.pdf "CUSTOM K80" ');
+    execFile('PDFtoPrinter.exe receipt.pdf "CUSTOM KPM180H Cutter" ');
 
   });
 }

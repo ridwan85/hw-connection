@@ -57,7 +57,7 @@ function createPdf(x) {
   let pdf = require("html-pdf");
 
   let options1 = {
-    height: "200mm",
+    height: "300mm",
     width: "80mm"
   };
 
@@ -101,13 +101,11 @@ function createPdf(x) {
     }
   };
 
-  var values = {
+  let values = {
     departDate: "2019-11-05",
     departTime: "22:00:00",
     soldBy: "KTB",
     seatNo: 123,
-    passportNumber :"AXALASKL",
-    phoneNo:"1123566989",
     pnrNo: 345,
     TicketNo: "12345",
     name: "tester",
@@ -154,10 +152,6 @@ function createPdf(x) {
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,500,700,900" rel='stylesheet' type='text/css'>
   <style>
-  html{
-    padding:5px;
-    font-family : 'arial';
-  }
      
       .solid-border {
         border-top: 1px dotted black;
@@ -183,13 +177,12 @@ function createPdf(x) {
 </div>
 
 <div class="solid-border" style="margin-top:20px;padding: 5px 0;/* text-align: center; */">
-${tickectdetails.header.SEAT_NO}: ${values.seatNo}
+${tickectdetails.header.SEAT_NO}: ${values.source.seatNo}
     <div style="
     display: flex;
     float: right;
 ">
-
-   <div style="float:right"> PNR NO : QSNQIL3 </div>
+    <div style="/* flex-direction: column; */font-weight: bold;/* float: right !important; *//* flex-basis: 50%; */">${values.source.pnrNo}</div><div style="/* flex-direction: column; *//* float: right; */">: QSNQIL3</div>
 </div>
 </div>
 <div class="summary" style="
@@ -199,94 +192,38 @@ ${tickectdetails.header.SEAT_NO}: ${values.seatNo}
 
 <div style="display: flex;flex-wrap: wrap;padding-bottom: 5px;">
     <div style="display:flex; flex-direction:row;width: 100%; margin-top: 5px;">
-
+<div style="flex-direction: column; font-weight: bold; flex-basis: 50%;">
+${tickectdetails.body.ROUTE}
 </div>
-
+<div style="flex-direction: column;">
+: ${values.source.name}
+<span>
+<i class="material-icons">
+arrow_right_alt
+</i>
+</span>
+${values.destination.name}
+</div>
+</div>
+ <div style="display:flex; flex-direction:row;width: 100%; margin-top: 5px;">
+<div style="flex-direction: column; font-weight: bold; flex-basis: 50%;">${tickectdetails.body.DEPART_DATE}</div>
+<div style="flex-direction: column;"><div style="display:flex;align-items: center;">
+<i class="material-icons" style="margin-right: 5px;">
+: calendar_today
+</i>
+<span style="padding-right:10px">${values.departDate}</span>
+</div> </div>
 </div>   
 
-<table style="font-size:12px;">
+<table>
       <tr>
       
-      <td style="width:200px; text-align:left; font-weight:bold;">
-       Route
+      <td>
+      Item
       </td>
-      <td style="width:200px; text-align:right">
-      ${values.source.name} -  
-      ${values.destination.name}
+      <td>
+      values
       </td>
-      </tr>
-
-      <tr>
-      <td style="width:200px; text-align:left; font-weight:bold">
-      Depart Date
-     </td>
-     <td style="width:200px; text-align:right">
-     ${values.departDate}
-     </td>
-     </tr>
-
-     <tr>
-     <td style="width:200px; text-align:left; font-weight:bold">
-     Depart Time
-    </td>
-    <td style="width:200px; text-align:right">
-    ${values.departTime}
-    </td>
-    </tr>
-
-    <tr>
-    <td style="width:200px; text-align:left; font-weight:bold">
-    Sold By
-   </td>
-   <td style="width:200px; text-align:right">
-   ${values.soldBy}
-   </td>
-   </tr>
-
-   <tr>
-   <td style="width:200px; text-align:left; font-weight:bold">
-   Ticket No
-  </td>
-  <td style="width:200px; text-align:right">
-  ${values.TicketNo}
-  </td>
-  </tr>
-
-  <tr>
-  <td style="width:200px; text-align:left; font-weight:bold">
-  Name
- </td>
- <td style="width:200px; text-align:right">
- ${values.name}
- </td>
- </tr>
-
- <tr>
- <td style="width:200px; text-align:left; font-weight:bold">
- Phone No
-</td>
-<td style="width:200px; text-align:right">
-${values.phoneNo}
-</td>
-</tr>
-
-<tr>
-<td style="width:200px; text-align:left; font-weight:bold">
- IC / Passport No
-</td>
-<td style="width:200px; text-align:right">
-${values.passportNumber}
-</td>
-</tr>
-
-<tr>
-<td style="width:200px; text-align:left; font-weight:bold">
- Price
-</td>
-<td style="width:200px; text-align:right">
-${values.total}
-</td>
-
       </tr>
 </table>
 <!-- <div style="display:flex; flex-direction:row;width: 100%; margin-top: 5px;">
@@ -356,7 +293,7 @@ ${tickectdetails.footer.bus}<br>${tickectdetails.footer.hotline}<br>${tickectdet
     }
     console.log(res);
     onSending("printing");
-    execFile('PDFtoPrinter.exe receipt.pdf "CUSTOM KPM180H Cutter" ');
+    // execFile('PDFtoPrinter.exe receipt.pdf "CUSTOM KPM180H Cutter" ');
   });
 }
 
